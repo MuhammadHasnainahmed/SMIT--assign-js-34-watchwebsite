@@ -1,0 +1,301 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  /* padding: 10px 30px; */
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-color: #0A5C38; Rolex Green */
+  padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+  cursor: pointer;
+}
+
+/* Nav Links */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #D4AF37; /* Gold */
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #0A5C38; /* Green on hover */
+}
+
+/* Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 8px 16px;
+  border: 2px solid #D4AF37; /* Gold border */
+  border-radius: 6px;
+  background-color: transparent;
+  color: #D4AF37;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.signup-btn {
+  background-color: #D4AF37; /* Gold background */
+  color: #0A5C38; /* Green text */
+}
+
+.login-btn:hover {
+  background-color: #D4AF37;
+  color: #0A5C38;
+}
+
+.signup-btn:hover {
+  background-color: #c9a636; /* darker gold on hover */
+  color: #fff;
+}
+
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 30px;
+  background-color: #0A5C38; 
+  color: #D4AF37; 
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #D4AF37;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #f9f9f9;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  padding: 12px 24px;
+  background-color: #D4AF37;
+  color: #0A5C38;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-btn:hover {
+  background-color: #c9a636;
+  color: white;
+}
+
+.hero-image img {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 10px;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); */
+}
+
+
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 40px;
+    margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form h1 {
+  text-align: center;
+  color: #0A5C38;
+  margin-bottom: 20px;
+}
+
+.signup-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.signup-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.signup-form input:focus {
+  border-color: #D4AF37; /* Gold border */
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.signup-form button {
+  padding: 12px;
+  background-color: #D4AF37; /* Gold */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-form button:hover {
+  background-color: #c19e34;
+}
+
+
+
+.login-box h2 {
+  text-align: center;
+  color: #1e5128;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #1e5128;
+}
+
+button {
+  padding: 12px;
+  background-color: #1e5128;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4e9f3d;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link a {
+  color: #1e5128;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.account-icon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #D4AF37; /* Gold */
+    margin-right: 10px;
+    
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .signup-container {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin-bottom: 30px;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-buttons {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
