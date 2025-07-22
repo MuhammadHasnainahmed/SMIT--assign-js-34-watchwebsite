@@ -45,13 +45,14 @@ body {
 
 .navbar ul li a {
   text-decoration: none;
-  color: #D4AF37; /* Gold */
+  color: #D4AF37; 
+  /* Gold */
   font-weight: 600;
   transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-  color: #0A5C38; /* Green on hover */
+  color: #0A5C38;
 }
 
 /* Buttons */
@@ -63,7 +64,7 @@ body {
 .login-btn,
 .signup-btn {
   padding: 8px 16px;
-  border: 2px solid #D4AF37; /* Gold border */
+  border: 2px solid #D4AF37; 
   border-radius: 6px;
   background-color: transparent;
   color: #D4AF37;
@@ -73,8 +74,8 @@ body {
 }
 
 .signup-btn {
-  background-color: #D4AF37; /* Gold background */
-  color: #0A5C38; /* Green text */
+  background-color: #D4AF37;
+  color: #0A5C38; 
 }
 
 .login-btn:hover {
@@ -83,8 +84,15 @@ body {
 }
 
 .signup-btn:hover {
-  background-color: #c9a636; /* darker gold on hover */
+  background-color: #c9a636; 
   color: #fff;
+}
+
+
+.signup-btn a,
+.login-btn a {
+  text-decoration: none;
+  color: inherit; 
 }
 
 

@@ -1,8 +1,7 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 const supabaseUrl = "https://dwbhnyakbuzwdqnoorec.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR3YmhueWFrYnV6d2Rxbm9vcmVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwMzIzNTgsImV4cCI6MjA2ODYwODM1OH0.dq171m-T7glqF2QU_kkg2-ns6N1PONF3zoU--vcUSV8";
+const supabaseKey ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR3YmhueWFrYnV6d2Rxbm9vcmVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwMzIzNTgsImV4cCI6MjA2ODYwODM1OH0.dq171m-T7glqF2QU_kkg2-ns6N1PONF3zoU--vcUSV8";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 console.log("supabase client created:", supabase);
@@ -11,6 +10,8 @@ const form = document.querySelector("form");
 let username = document.getElementById("name");
 let useremail = document.getElementById("email");
 let userpassword = document.getElementById("password");
+
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -21,7 +22,7 @@ form.addEventListener("submit", async (event) => {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { full_name: name } },
+    options: { data: { Full_name } },
   });
 
   if (Full_name === "" || email === "" || password === "") {
@@ -29,10 +30,7 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  if (email === email) {
-    alert("User already exists");
-    return;
-  }
+
 
   if (error) {
     console.error("Error inserting data:", error);
@@ -40,7 +38,7 @@ form.addEventListener("submit", async (event) => {
     console.log("Data inserted successfully:", data);
     alert("Sign Up Successful");
 
-    window.location.href = "/logi/login.html";
+    window.location.href = "login.html";
   }
 
   username.value = "";
@@ -51,8 +49,8 @@ form.addEventListener("submit", async (event) => {
 
 
 // ------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
 let loginForm = document.getElementById("loginForm");
+
 if (loginForm) {
     
 
@@ -73,26 +71,48 @@ loginForm.addEventListener("submit", async (event) => {
     alert("Login Successful");
     localStorage.setItem("isLoggedIn", "true");
     // accounticon.style.display = 'block';
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
   }
 });
 
 }
 
 
-});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const isLoggedIn = localStorage.getItem('isLoggedIn');
+//   const accounticon = document.querySelector('.account-icon');
+
+//   if (accounticon) {
+//     if (isLoggedIn === 'true') {
+//       accounticon.style.display = 'block';
+//     } else {
+//       accounticon.style.display = 'none';
+//     }
+//   }
+// });
+
+let googlebtn = document.getElementById("googlebtn");
+
+googlebtn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+  provider: 'google',
+  
+})
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
-  const accounticon = document.querySelector('.account-icon');
+log("Google sign-in initiated:", data);
 
-  if (accounticon) {
-    if (isLoggedIn === 'true') {
-      accounticon.style.display = 'block';
-    } else {
-      accounticon.style.display = 'none';
-    }
-  }
+if (error) {
+    console.error("Error signing in with Google:", error);
+    alert("Google sign-in failed. Please try again.");
+  } else {
+    console.log("Google sign-in successful:", data);
+    alert("Google Sign-In Successful");
+    window.location.href = "index.html";
+  
+}
+
 });
 
