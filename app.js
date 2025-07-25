@@ -22,7 +22,11 @@ form.addEventListener("submit", async (event) => {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { Full_name } },
+    options: { 
+      data: {
+        Full_name
+      }
+    },
   });
 
   if (Full_name === "" || email === "" || password === "") {
@@ -115,4 +119,17 @@ if (error) {
 }
 
 });
+
+
+
+// -------------------confirmEmailForm---------------
+
+
+
+let confirmEmailForm = document.getElementById("confirmEmailForm");
+
+
+function confirmEmailForm() {
+  
+}
 
